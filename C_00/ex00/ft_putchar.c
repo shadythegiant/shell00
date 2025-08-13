@@ -11,23 +11,10 @@
 /* ************************************************************************** */
 
 
-
-#include <stdio.h> 
-
-
-int main() { 
-    int a = 33; 
-    int b = 22; 
-
-    int c; 
-
-    c = a + b ; 
-    printf("c is %d\n" , c); 
+#include <unistd.h>
 
 
-
-
-
-    return 0; 
+void ft_putchar(char c) { 
+    write(1, &c, 1); 
 
 }
