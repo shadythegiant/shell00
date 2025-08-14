@@ -12,12 +12,14 @@
 
 #include <unistd.h>
 
+void	ft_print_alphabet(void)
+{
+	int	ascii_order;
 
-
-void ft_print_alphabet(void) {
-    int ascii_order = 97; 
-    while (ascii_order <= 122)   {
-        write(1, &ascii_order, 1); 
-        ascii_order++; 
-    }
+	ascii_order = 97;
+	while (ascii_order <= 122)
+	{
+		write(1, &ascii_order, 1);
+		ascii_order++;
+	}
 }
