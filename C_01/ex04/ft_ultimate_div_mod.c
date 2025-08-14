@@ -2,12 +2,12 @@
 
 void	ft_ultimate_div_mod(int *a, int *b)
 {
-	int	div;
+	int	division;
 
 	if (*b != 0)
 	{
-		div = *a / *b;
+		division = *a / *b;
 		*b = *a % *b;
-		*a = div;
+		*a = division;
 	}
 }
