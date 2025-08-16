@@ -1,6 +1,5 @@
 #include <unistd.h>
 
-
 void	print_digits(int d1, int d2, int d3, int last)
 {
 	char	c;
@@ -42,7 +41,3 @@ void	ft_print_comb(void)
 		i++;
 	}
 }
-
-
-
-
