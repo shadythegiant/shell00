@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	is_printable(char character)
+int	is_printable1(char character)
 {
 	if (character >= 32 && character <= 126)
 	{
@@ -19,7 +19,7 @@ static int	is_printable(char character)
 	return (0);
 }
 
-int	ft_str_is_printable(char *str)
+int	ft_str_is_printable1(char *str)
 {
 	int	index;
 
@@ -28,7 +28,7 @@ int	ft_str_is_printable(char *str)
 		return (1);
 	while (str[index] != '\0')
 	{
-		if (!is_printable(str[index]))
+		if (!is_printable1(str[index]))
 			return (0);
 		index++;
 	}
