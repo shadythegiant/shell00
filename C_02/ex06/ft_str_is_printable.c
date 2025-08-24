@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	is_printable(char character)
+static int	is_printable(char character)
 {
-	if (!(character >= 32 || character <= 126))
+	if (character >= 32 && character <= 126)
 	{
-		return (0);
+		return (1);
 	}
-	return (1);
+	return (0);
 }
 
 int	ft_str_is_printable(char *str)
@@ -28,7 +28,7 @@ int	ft_str_is_printable(char *str)
 		return (1);
 	while (str[index] != '\0')
 	{
-		if (is_printable(str[index]) == 0)
+		if (!is_printable(str[index]))
 			return (0);
 		index++;
 	}

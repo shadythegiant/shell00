@@ -31,7 +31,6 @@ int isEven_odd(char character)  {
 int main()
 {
   char alphabet = 'z';
-  
   while  (alphabet >= 'a' ) { 
     if (isEven_odd(alphabet)) { 
 
