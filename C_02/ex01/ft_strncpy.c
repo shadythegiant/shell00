@@ -17,12 +17,12 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	i = 0;
 	while (*src && i < n)
 	{
-		*dest++ = *src++;
+		dest[i] = *src++;
 		i++;
 	}
 	while (i < n)
 	{
-		*dest++ = '\0';
+		dest[i] = '\0';
 		i++;
 	}
 	return (dest);
@@ -47,10 +47,11 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 
 // #include <stdio.h>
 
-// int main() {
-//     char str[] = "hello";
-//     char str2[100];
+// int	main(void)
+// {
+// 	char	str[] = "hello";
+// 	char	str2[100];
 
-//     ft_strncpy(str2, str, 100);
-//     printf("%s", "hello");
+// 	;
+// 	printf("%s", ft_strncpy(str2, str, 100));
 // }
