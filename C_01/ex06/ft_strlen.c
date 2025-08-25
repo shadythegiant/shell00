@@ -21,3 +21,12 @@ int	ft_strlen(char *str)
 	}
 	return (len);
 }
+
+
+// int ft_strlen2(char *string) { 
+// 		char *start = string; 
+// 		while (*string) { 
+// 			string++; 
+// 		}
+// 		return(string - start); 
+// }
