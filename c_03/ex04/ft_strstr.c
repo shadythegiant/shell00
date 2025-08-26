@@ -1,36 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azahidi <azahidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 15:15:18 by azahidi           #+#    #+#             */
-/*   Updated: 2025/08/26 15:15:21 by azahidi          ###   ########.fr       */
+/*   Created: 2025/08/26 15:20:47 by azahidi           #+#    #+#             */
+/*   Updated: 2025/08/26 15:20:49 by azahidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strlen(char *string)
 {
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
-	{
+	while (string[i])
 		i++;
-	}
-	if (n == i)
-		return (0);
-	return (s1[i] - s2[i]);
+	return (i);
 }
 
-// int	ft_strncmp(char *s1, char *s2)
-// {
-// 	unsigned i = 0;
+char	*ft_strstr(char *str, char *to_find)
+{
+	int	i;
+	int	j;
+	int	len;
 
-// 	while (*s1 && *s2 && *s1 == *s2 && i < n)
-// 	{
-// 		*s1++;
-// 		*s2++;
-// 	}
-// }
+	if (!to_find[0] || !str)
+		return (str);
+	i = 0;
+	len = ft_strlen(to_find);
+	while (str[i])
+	{
+		j = 0;
+		while (str[i + j] && to_find[j] && str[i + j] == to_find[j])
+			j++;
+		if (j == len)
+		{
+			return (&str[i]);
+		}
+		i++;
+	}
+	return (0);
+}

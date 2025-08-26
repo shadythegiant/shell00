@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azahidi <azahidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 15:15:18 by azahidi           #+#    #+#             */
-/*   Updated: 2025/08/26 15:15:21 by azahidi          ###   ########.fr       */
+/*   Created: 2025/08/26 15:33:34 by azahidi           #+#    #+#             */
+/*   Updated: 2025/08/26 15:33:38 by azahidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
 	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (i < n && s1[i] && s2[i] && s1[i] == s2[i])
-	{
-		i++;
-	}
-	if (n == i)
+	j = 0;
+	if (!dest || !src)
 		return (0);
-	return (s1[i] - s2[i]);
+	while (dest[i])
+		i++;
+	while (src[j] && j < nb)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 
-// int	ft_strncmp(char *s1, char *s2)
-// {
-// 	unsigned i = 0;
+// #include <stdio.h>
 
-// 	while (*s1 && *s2 && *s1 == *s2 && i < n)
-// 	{
-// 		*s1++;
-// 		*s2++;
-// 	}
+// int main() {
+
+//     char src[] =" World";
+//     char dest[100] = "hello";
+//     printf("%s", ft_strncat(dest, src, 6));
+//     return (0);
 // }
