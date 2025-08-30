@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: azahidi <azahidi@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/30 19:04:03 by azahidi           #+#    #+#             */
+/*   Updated: 2025/08/30 19:04:06 by azahidi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
 int	ft_strlen(char *string)
@@ -17,7 +29,7 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-int	isValid(char *string, int size)
+int	isvalid(char *string, int size)
 {
 	int	counter;
 	int	inner_counter;
@@ -39,46 +51,34 @@ int	isValid(char *string, int size)
 			return (0);
 		counter++;
 	}
-	retukrn (1);
+	return (1);
 }
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	unsigned int	i;
-	unsigned int	base_len;
-	int				count;
-	char			digits[32];
-	long int		nbl;
+	char	d[32];
+	long	n;
+	int		i;
 
-	i = 0;
-	nbl = nbr;
-	base_len = ft_strlen(base);
-	if (!isValid(base, base_len))
+	n = nbr;
+	if (!isvalid(base, ft_strlen(base)))
 		return ;
-	if (nbl < 0)
+	if (n < 0)
 	{
-		nbl = -nbl;
 		ft_putchar('-');
+		n = -n;
 	}
-	if (nbl == 0)
+	if (n == 0)
+		return (ft_putchar(base[0]));
+	i = 0;
+	while (n)
 	{
-		ft_putchar(base[0]);
-		return ;
+		d[i++] = base[n % ft_strlen(base)];
+		n /= ft_strlen(base);
 	}
-	while (nbl > 0)
-	{
-		digits[i] = base[nbl % base_len];
-		nbl = nbl / base_len;
-		i++;
-	}
-	count = i - 1;
-	while (count >= 0)
-	{
-		ft_putchar(digits[count]);
-		count--;
-	}
+	while (--i >= 0)
+		ft_putchar(d[i]);
 }
-
 // int main(void)
 // {
 //     write(1, "Base 10: ", 9);
