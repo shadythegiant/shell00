@@ -33,8 +33,11 @@ int	main(int argc, char *argv[])
 {
 	char	*programm_name;
 
-	programm_name = argv[argc - 1];
-	ft_putstr(programm_name);
-	ft_putchar('\n');
+	if(argc == 1) { 
+		programm_name = argv[argc - 1];
+	   ft_putstr(programm_name);
+	 ft_putchar('\n');
+	}
+	
 	return (0);
 }

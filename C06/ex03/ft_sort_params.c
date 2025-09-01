@@ -69,7 +69,9 @@ int	main(int argc, char *argv[])
 	while (counter < argc)
 	{
 		ft_putstr(argv[counter]);
+		ft_putchar('\n');
 		counter++;
 	}
+	
 	return (0);
 }
