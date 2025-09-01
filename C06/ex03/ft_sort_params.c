@@ -72,6 +72,5 @@ int	main(int argc, char *argv[])
 		ft_putchar('\n');
 		counter++;
 	}
-	
 	return (0);
 }
