@@ -1,14 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_convert_base2.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: azahidi <azahidi@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/03 18:41:38 by azahidi           #+#    #+#             */
+/*   Updated: 2025/09/03 18:41:40 by azahidi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int ft_strlen(char *string) { 
-	int counter; 
-	counter = 0; 
+int	ft_strlen(char *string)
+{
+	int	counter;
 
-	while(string[counter]) { 
-		counter++; 
+	counter = 0;
+	while (string[counter])
+	{
+		counter++;
 	}
-
-	return counter;
+	return (counter);
 }
 
 int	is_valid_base(char *str_base, int size)
@@ -27,7 +40,7 @@ int	is_valid_base(char *str_base, int size)
 		if (str_base[counter] == '+' || str_base[counter] == '-')
 			return (0);
 		checker = counter + 1;
-		while (str_base[checker])	
+		while (str_base[checker])
 		{
 			if (str_base[counter] == str_base[checker])
 			{
@@ -39,6 +52,7 @@ int	is_valid_base(char *str_base, int size)
 	}
 	return (1);
 }
+
 int	ft_strchr(char *str, char c)
 {
 	char	*start;
@@ -54,6 +68,7 @@ int	ft_strchr(char *str, char c)
 	}
 	return (-1);
 }
+
 int	skip_whitespace_and_sign(char *str, short *sign)
 {
 	int	i;
@@ -70,25 +85,26 @@ int	skip_whitespace_and_sign(char *str, short *sign)
 	return (i);
 }
 
-	char *ft_revtab(int size, char *string) { 
-		
-		int counter; 
+char	*ft_revtab(int size, char *string)
+{
+	int		counter;
+	char	*return_string;
 
-		char *return_string = malloc(sizeof(char) * size + 1); 
-		if(!return_string) return NULL; 
-
-		if(size <= 1) {
-			return_string[0] = string[0];
-			return_string[1] = '\0'; 
-			return return_string; 
-		}
-		counter = 0; 
-		while(counter < size ) {
-			return_string[counter] = string[size - 1 - counter] ;
-			counter++; 
-		}
-	return_string[counter] = '\0'; 
-	return return_string; 
+	return_string = malloc(sizeof(char) * size + 1);
+	if (!return_string)
+		return (NULL);
+	if (size <= 1)
+	{
+		return_string[0] = string[0];
+		return_string[1] = '\0';
+		return (return_string);
+	}
+	counter = 0;
+	while (counter < size)
+	{
+		return_string[counter] = string[size - 1 - counter];
+		counter++;
+	}
+	return_string[counter] = '\0';
+	return (return_string);
 }
-
-
