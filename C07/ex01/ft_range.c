@@ -5,7 +5,7 @@ int *ft_range(int min, int max)
 	if (min >= max) {
 		return NULL;
 	}
-	int size = max - min;
+	int size = max - min ;
 	int *range = malloc(sizeof(int) * size);
 	if (range == NULL)	
 	{
@@ -24,7 +24,7 @@ int *ft_range(int min, int max)
 int main() {
 	int min = 0;
 	int max = 4;
-	int size = max - min;
+	int size = max - min + 1;
 	int *ret = ft_range(min, max);
 	int i = 0;
 	while (i < size) {
