@@ -1,20 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_range.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: azahidi <azahidi@student.1337.ma>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/03 18:53:20 by azahidi           #+#    #+#             */
+/*   Updated: 2025/09/03 18:53:23 by azahidi          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
-int ft_ultimate_range(int **range, int min, int max)
+int	ft_ultimate_range(int **range, int min, int max)
 {
-	int size;
-	int i; 
+	int	size;
+	int	i;
 
-	if (min >= max) {
+	if (min >= max)
+	{
 		*range = NULL;
-		return 0;
+		return (0);
 	}
-	 size = max - min;
+	size = max - min;
 	*range = malloc(sizeof(int) * size);
 	if (*range == NULL)
-		return -1;
-	 i = 0;
-	while (i < size) {
+		return (-1);
+	i = 0;
+	while (i < size)
+	{
 		(*range)[i] = min + i;
 		i++;
 	}
