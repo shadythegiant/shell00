@@ -11,6 +11,13 @@ int	ft_strlen(char *str)
 }
 
 char *ft_strjoin(int size, char **strs, char *sep){
+	if(size == 0) { 
+		char *empty_string; 
+		empty_string = malloc(sizeof(char) * 1); 
+		empty_string[0] = '\0'; 
+		return empty_string; 
+	}
+
 	int total_size = 0;
 	int i = 0;
 	while (i < size) {
@@ -45,6 +52,9 @@ char *ft_strjoin(int size, char **strs, char *sep){
 #include <stdio.h>
 int main() {
 	char *strs[] = {"hello", "world", "my", "name", NULL};
+	char *empty2[] = {"ss ","ss "}; 
 	char *join = ft_strjoin(4, strs, " ___ ");
+	char *empty = ft_strjoin(0, empty2, ""); 
 	printf("%s\n", join);
+	printf("%s\n", empty);
 }
