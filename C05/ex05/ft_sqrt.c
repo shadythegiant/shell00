@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azahidi <azahidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/31 03:55:01 by azahidi           #+#    #+#             */
-/*   Updated: 2025/08/31 03:55:04 by azahidi          ###   ########.fr       */
+/*   Created: 2025/09/03 23:02:20 by azahidi           #+#    #+#             */
+/*   Updated: 2025/09/03 23:02:22 by azahidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_fibonacci(int index)
+
+int	ft_sqrt(int nb)
 {
-	if (index < 0)
-	{
-		return (-1);
-	}
-	if (index == 0)
+	long	index;
+	long	number;
+
+	number = nb;
+	if (number == 0)
 	{
 		return (0);
 	}
-	if (index == 1)
+	if (number == 1)
 	{
 		return (1);
 	}
-	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
+	index = 2;
+	while (number >= 2)
+	{
+		while (index * index <= number)
+		{
+			if (index * index == number)
+			{
+				return (index);
+			}
+			index++;
+		}
+	}
+	return (0);
 }

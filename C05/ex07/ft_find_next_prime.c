@@ -23,7 +23,7 @@ int	ft_is_prime(int nb)
 	}
 	while (i <= nbr / 2)
 	{
-		if (nb % i == 0)
+		if (nbr % i == 0)
 		{
 			return (0);
 		}
