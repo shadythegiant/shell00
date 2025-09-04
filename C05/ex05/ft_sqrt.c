@@ -10,31 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int ft_sqrt(int nb)
 {
-	long	index;
-	long	number;
+    long index;
+    long number;
 
-	number = nb;
-	if (number == 0)
-	{
-		return (0);
-	}
-	if (number == 1)
-	{
-		return (1);
-	}
-	index = 2;
-	while (number >= 2)
-	{
-		while (index * index <= number)
-		{
-			if (index * index == number)
-			{
-				return (index);
-			}
-			index++;
-		}
-	}
-	return (0);
+    number = nb;
+    if (number <= 0)
+        return (0);
+    if (number == 1)
+        return (1);
+
+    index = 2;
+    while (index * index <= number)
+    {
+        if (index * index == number)
+            return (index);
+        index++;
+    }
+    return (0);
 }
+
